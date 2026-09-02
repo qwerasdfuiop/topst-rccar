@@ -1495,214 +1495,215 @@ Linker script and memory map
 .rodata         0x00000000010fd5f8    0x16fe8
                 0x00000000010fd5f8                __RODATA_START__ = .
  *(.rodata)
- .rodata        0x00000000010fd5f8      0x159 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/main.o
- *fill*         0x00000000010fd751        0x3 
- .rodata        0x00000000010fd754      0xb81 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/can_demo.o
- *fill*         0x00000000010fe2d5        0x3 
- .rodata        0x00000000010fe2d8      0x685 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/console.o
- *fill*         0x00000000010fe95d        0x3 
- .rodata        0x00000000010fe960      0x889 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/fwupdate.o
- *fill*         0x00000000010ff1e9        0x3 
- .rodata        0x00000000010ff1ec        0x5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/idle.o
- *fill*         0x00000000010ff1f1        0x3 
- .rodata        0x00000000010ff1f4       0xe2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/iperf_task_v3_0d.o
- *fill*         0x00000000010ff2d6        0x2 
- .rodata        0x00000000010ff2d8        0x7 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spi_led.o
- *fill*         0x00000000010ff2df        0x1 
- .rodata        0x00000000010ff2e0      0x314 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/audio_test.o
- .rodata        0x00000000010ff5f4        0x8 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/audio_chip_veri.o
- .rodata        0x00000000010ff5fc      0x200 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wm8904.o
-                0x00000000010ff5fc                volumeSteps
- .rodata        0x00000000010ff7fc       0x8b ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/cpu_test.o
- *fill*         0x00000000010ff887        0x1 
- .rodata        0x00000000010ff888      0x287 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/dse_test.o
- *fill*         0x00000000010ffb0f        0x1 
- .rodata        0x00000000010ffb10      0xaec ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eflash_test.o
- .rodata        0x00000000011005fc      0x229 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/fmu_test.o
- *fill*         0x0000000001100825        0x3 
- .rodata        0x0000000001100828      0x19a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gdma_test.o
- *fill*         0x00000000011009c2        0x2 
- .rodata        0x00000000011009c4      0x1fa ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gic_test.o
- *fill*         0x0000000001100bbe        0x2 
- .rodata        0x0000000001100bc0      0xabd ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpio_test.o
- *fill*         0x000000000110167d        0x3 
- .rodata        0x0000000001101680       0xdb ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpio_ctrl.o
- *fill*         0x000000000110175b        0x1 
- .rodata        0x000000000110175c      0x9fe ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpsb_test.o
- *fill*         0x000000000110215a        0x2 
- .rodata        0x000000000110215c     0x1f4d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/hsm_test.o
- *fill*         0x00000000011040a9        0x3 
- .rodata        0x00000000011040ac      0x1de ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2c_test.o
- *fill*         0x000000000110428a        0x2 
- .rodata        0x000000000110428c       0x7c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2c_ctrl.o
- .rodata        0x0000000001104308      0x2b1 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/ictc_test.o
- *fill*         0x00000000011045b9        0x3 
- .rodata        0x00000000011045bc      0x1ae ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/lin_test.o
- *fill*         0x000000000110476a        0x2 
- .rodata        0x000000000110476c      0x217 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pdm_test.o
- *fill*         0x0000000001104983        0x1 
- .rodata        0x0000000001104984       0xe2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pdm_ctrl.o
- *fill*         0x0000000001104a66        0x2 
- .rodata        0x0000000001104a68      0x78c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmu_test.o
- .rodata        0x00000000011051f4      0x263 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/rtc_test.o
- *fill*         0x0000000001105457        0x1 
- .rodata        0x0000000001105458       0xc2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/sfmc_test.o
- *fill*         0x000000000110551a        0x2 
- .rodata        0x000000000110551c      0x256 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/echo_test.o
- *fill*         0x0000000001105772        0x2 
- .rodata        0x0000000001105774      0x4af ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/timer_test.o
- *fill*         0x0000000001105c23        0x1 
- .rodata        0x0000000001105c24       0xd5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/uart_test.o
- *fill*         0x0000000001105cf9        0x3 
- .rodata        0x0000000001105cfc      0xe4b ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wdt_test.o
- *fill*         0x0000000001106b47        0x1 
- .rodata        0x0000000001106b48      0xa72 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/writelock_test.o
- *fill*         0x00000000011075ba        0x2 
- .rodata        0x00000000011075bc        0xc ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eth_test.o
- .rodata        0x00000000011075c8      0x5b0 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spu_test.o
- .rodata        0x0000000001107b78      0x14a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/power_app.o
- *fill*         0x0000000001107cc2        0x2 
- .rodata        0x0000000001107cc4      0x2ce ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/power_com.o
- *fill*         0x0000000001107f92        0x2 
- .rodata        0x0000000001107f94      0x5ca ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spi_eccp.o
- *fill*         0x000000000110855e        0x2 
- .rodata        0x0000000001108560      0x98c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/hsm_manager.o
- .rodata        0x0000000001108eec      0x500 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/lin.o
- .rodata        0x00000000011093ec      0x189 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/adc.o
- *fill*         0x0000000001109575        0x3 
- .rodata        0x0000000001109578       0x9f ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/can.o
- *fill*         0x0000000001109617        0x1 
- .rodata        0x0000000001109618      0x56e ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/can_drv.o
- *fill*         0x0000000001109b86        0x2 
- .rodata        0x0000000001109b88       0x25 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/debug.o
- *fill*         0x0000000001109bad        0x3 
- .rodata        0x0000000001109bb0       0x3a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/bsp.o
- *fill*         0x0000000001109bea        0x2 
- .rodata        0x0000000001109bec       0xb8 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/dse.o
- .rodata        0x0000000001109ca4      0x3f2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eflash.o
- *fill*         0x000000000110a096        0x2 
- .rodata        0x000000000110a098      0x5b7 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eth.o
- *fill*         0x000000000110a64f        0x1 
- .rodata        0x000000000110a650       0xde ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eth_mii.o
- *fill*         0x000000000110a72e        0x2 
- .rodata        0x000000000110a730      0x305 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/fmu.o
- *fill*         0x000000000110aa35        0x3 
- .rodata        0x000000000110aa38      0x13e ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gdma.o
- *fill*         0x000000000110ab76        0x2 
- .rodata        0x000000000110ab78      0x400 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpio.o
- .rodata        0x000000000110af78     0x10e1 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpsb.o
- *fill*         0x000000000110c059        0x3 
- .rodata        0x000000000110c05c      0x210 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpsb_reg.o
-                0x000000000110c05c                gpsbport
-                0x000000000110c254                gpsb_sm
- .rodata        0x000000000110c26c      0x79a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2c.o
- *fill*         0x000000000110ca06        0x2 
- .rodata        0x000000000110ca08      0x46d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2s.o
- *fill*         0x000000000110ce75        0x3 
- .rodata        0x000000000110ce78      0x739 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/ictc.o
- *fill*         0x000000000110d5b1        0x3 
- .rodata        0x000000000110d5b4      0x5da ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pdm.o
- *fill*         0x000000000110db8e        0x2 
- .rodata        0x000000000110db90      0x472 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmio_dev.o
- *fill*         0x000000000110e002        0x2 
- .rodata        0x000000000110e004       0x28 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmio_dev_extn_pw_ctl.o
- .rodata        0x000000000110e02c      0x152 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmu.o
- *fill*         0x000000000110e17e        0x2 
- .rodata        0x000000000110e180       0xb5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/rtc_dev.o
- *fill*         0x000000000110e235        0x3 
- .rodata        0x000000000110e238     0x14d4 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/snor_mio.o
- .rodata        0x000000000110f70c      0x2a3 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spu.o
- *fill*         0x000000000110f9af        0x1 
- .rodata        0x000000000110f9b0      0x2f5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/ssm.o
- *fill*         0x000000000110fca5        0x3 
- .rodata        0x000000000110fca8       0xde ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/timer.o
- *fill*         0x000000000110fd86        0x2 
- .rodata        0x000000000110fd88      0x33d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/uart.o
- *fill*         0x00000000011100c5        0x3 
- .rodata        0x00000000011100c8      0x18d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wdt.o
- *fill*         0x0000000001110255        0x3 
- .rodata        0x0000000001110258      0x1ac ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wdt_pmu.o
- .rodata        0x0000000001110404        0x5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/tasks.o
- *fill*         0x0000000001110409        0x3 
- .rodata        0x000000000111040c        0xd ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/timers.o
- *fill*         0x0000000001110419        0x3 
- .rodata        0x000000000111041c       0x20 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/port.o
-                0x000000000111041c                ulICCIAR
-                0x0000000001110420                ulICCEOIR
-                0x0000000001110424                ulICCPMR
-                0x0000000001110428                ulMaxAPIPriorityMask
- .rodata        0x000000000111043c        0x4 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/heap_5.o
- .rodata        0x0000000001110440       0x26 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_ARP.o
- *fill*         0x0000000001110466        0x2 
- .rodata        0x0000000001110468       0x14 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_DNS.o
-                0x0000000001110468                xLLMNR_MacAdress
- .rodata        0x000000000111047c       0x28 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_IP.o
-                0x000000000111047c                xBroadcastMACAddress
- .rodata        0x00000000011104a4       0x25 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_Port.o
-                0x00000000011104a4                xLogToStdout
-                0x00000000011104a8                xLogToFile
-                0x00000000011104ac                xLogToUDP
- *fill*         0x00000000011104c9        0x3 
- .rodata        0x00000000011104cc        0x4 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/BufferAllocation_1.o
-                0x00000000011104cc                xBufferAllocFixedSize
- .rodata        0x00000000011104d0       0x4c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/NetworkInterface.o
- .rodata        0x000000000111051c      0x259 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/sal_freertos_impl.o
- *fill*         0x0000000001110775        0x3 
- .rodata        0x0000000001110778       0x20 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfprintf.o)
- .rodata        0x0000000001110798       0x22 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfscanf.o)
- *fill*         0x00000000011107ba        0x2 
- .rodata        0x00000000011107bc        0x4 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-impure.o)
-                0x00000000011107bc                _global_impure_ptr
- .rodata        0x00000000011107c0     0x34ce /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-jp2uc.o)
- *fill*         0x0000000001113c8e        0x2 
- .rodata        0x0000000001113c90      0x188 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-locale.o)
-                0x0000000001113cac                __C_locale
- .rodata        0x0000000001113e18       0x90 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-mbtowc_r.o)
- .rodata        0x0000000001113ea8      0x128 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-mprec.o)
-                0x0000000001113eb8                __mprec_tens
-                0x0000000001113f80                __mprec_tinytens
-                0x0000000001113fa8                __mprec_bigtens
- .rodata        0x0000000001113fd0       0x50 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-strtod.o)
- .rodata        0x0000000001114020      0x1f8 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfiprintf.o)
-                0x0000000001114020                __chclass
-                0x0000000001114120                __state_table
-                0x000000000111418c                __action_table
- .rodata        0x0000000001114218       0x22 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfiscanf.o)
- *fill*         0x000000000111423a        0x2 
- .rodata        0x000000000111423c      0x101 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-ctype_.o)
-                0x000000000111423c                _ctype_
- *fill*         0x000000000111433d        0x3 
- .rodata        0x0000000001114340      0x100 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-gdtoa-gethex.o)
-                0x0000000001114340                __hexdig
+ .rodata        0x00000000010fd5f8      0x14f ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/main.o
+ *fill*         0x00000000010fd747        0x1 
+ .rodata        0x00000000010fd748      0xb81 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/can_demo.o
+ *fill*         0x00000000010fe2c9        0x3 
+ .rodata        0x00000000010fe2cc      0x685 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/console.o
+ *fill*         0x00000000010fe951        0x3 
+ .rodata        0x00000000010fe954      0x889 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/fwupdate.o
+ *fill*         0x00000000010ff1dd        0x3 
+ .rodata        0x00000000010ff1e0        0x5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/idle.o
+ *fill*         0x00000000010ff1e5        0x3 
+ .rodata        0x00000000010ff1e8       0xe2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/iperf_task_v3_0d.o
+ *fill*         0x00000000010ff2ca        0x2 
+ .rodata        0x00000000010ff2cc        0x7 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spi_led.o
+ *fill*         0x00000000010ff2d3        0x1 
+ .rodata        0x00000000010ff2d4      0x314 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/audio_test.o
+ .rodata        0x00000000010ff5e8        0x8 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/audio_chip_veri.o
+ .rodata        0x00000000010ff5f0      0x200 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wm8904.o
+                0x00000000010ff5f0                volumeSteps
+ .rodata        0x00000000010ff7f0       0x8b ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/cpu_test.o
+ *fill*         0x00000000010ff87b        0x1 
+ .rodata        0x00000000010ff87c      0x287 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/dse_test.o
+ *fill*         0x00000000010ffb03        0x1 
+ .rodata        0x00000000010ffb04      0xaec ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eflash_test.o
+ .rodata        0x00000000011005f0      0x229 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/fmu_test.o
+ *fill*         0x0000000001100819        0x3 
+ .rodata        0x000000000110081c      0x19a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gdma_test.o
+ *fill*         0x00000000011009b6        0x2 
+ .rodata        0x00000000011009b8      0x1fa ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gic_test.o
+ *fill*         0x0000000001100bb2        0x2 
+ .rodata        0x0000000001100bb4      0xabd ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpio_test.o
+ *fill*         0x0000000001101671        0x3 
+ .rodata        0x0000000001101674       0xdb ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpio_ctrl.o
+ *fill*         0x000000000110174f        0x1 
+ .rodata        0x0000000001101750      0x9fe ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpsb_test.o
+ *fill*         0x000000000110214e        0x2 
+ .rodata        0x0000000001102150     0x1f4d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/hsm_test.o
+ *fill*         0x000000000110409d        0x3 
+ .rodata        0x00000000011040a0      0x1de ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2c_test.o
+ *fill*         0x000000000110427e        0x2 
+ .rodata        0x0000000001104280       0x7c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2c_ctrl.o
+ .rodata        0x00000000011042fc      0x2b1 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/ictc_test.o
+ *fill*         0x00000000011045ad        0x3 
+ .rodata        0x00000000011045b0      0x1ae ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/lin_test.o
+ *fill*         0x000000000110475e        0x2 
+ .rodata        0x0000000001104760      0x217 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pdm_test.o
+ *fill*         0x0000000001104977        0x1 
+ .rodata        0x0000000001104978       0xe2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pdm_ctrl.o
+ *fill*         0x0000000001104a5a        0x2 
+ .rodata        0x0000000001104a5c      0x78c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmu_test.o
+ .rodata        0x00000000011051e8      0x263 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/rtc_test.o
+ *fill*         0x000000000110544b        0x1 
+ .rodata        0x000000000110544c       0xc2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/sfmc_test.o
+ *fill*         0x000000000110550e        0x2 
+ .rodata        0x0000000001105510      0x256 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/echo_test.o
+ *fill*         0x0000000001105766        0x2 
+ .rodata        0x0000000001105768      0x4af ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/timer_test.o
+ *fill*         0x0000000001105c17        0x1 
+ .rodata        0x0000000001105c18       0xd5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/uart_test.o
+ *fill*         0x0000000001105ced        0x3 
+ .rodata        0x0000000001105cf0      0xe4b ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wdt_test.o
+ *fill*         0x0000000001106b3b        0x1 
+ .rodata        0x0000000001106b3c      0xa72 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/writelock_test.o
+ *fill*         0x00000000011075ae        0x2 
+ .rodata        0x00000000011075b0        0xc ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eth_test.o
+ .rodata        0x00000000011075bc      0x5b0 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spu_test.o
+ .rodata        0x0000000001107b6c      0x14a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/power_app.o
+ *fill*         0x0000000001107cb6        0x2 
+ .rodata        0x0000000001107cb8      0x2ce ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/power_com.o
+ *fill*         0x0000000001107f86        0x2 
+ .rodata        0x0000000001107f88      0x5ca ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spi_eccp.o
+ *fill*         0x0000000001108552        0x2 
+ .rodata        0x0000000001108554      0x98c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/hsm_manager.o
+ .rodata        0x0000000001108ee0      0x500 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/lin.o
+ .rodata        0x00000000011093e0      0x189 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/adc.o
+ *fill*         0x0000000001109569        0x3 
+ .rodata        0x000000000110956c       0x9f ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/can.o
+ *fill*         0x000000000110960b        0x1 
+ .rodata        0x000000000110960c      0x56e ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/can_drv.o
+ *fill*         0x0000000001109b7a        0x2 
+ .rodata        0x0000000001109b7c       0x25 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/debug.o
+ *fill*         0x0000000001109ba1        0x3 
+ .rodata        0x0000000001109ba4       0x3a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/bsp.o
+ *fill*         0x0000000001109bde        0x2 
+ .rodata        0x0000000001109be0       0xb8 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/dse.o
+ .rodata        0x0000000001109c98      0x3f2 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eflash.o
+ *fill*         0x000000000110a08a        0x2 
+ .rodata        0x000000000110a08c      0x5b7 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eth.o
+ *fill*         0x000000000110a643        0x1 
+ .rodata        0x000000000110a644       0xde ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/eth_mii.o
+ *fill*         0x000000000110a722        0x2 
+ .rodata        0x000000000110a724      0x305 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/fmu.o
+ *fill*         0x000000000110aa29        0x3 
+ .rodata        0x000000000110aa2c      0x13e ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gdma.o
+ *fill*         0x000000000110ab6a        0x2 
+ .rodata        0x000000000110ab6c      0x400 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpio.o
+ .rodata        0x000000000110af6c     0x10e1 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpsb.o
+ *fill*         0x000000000110c04d        0x3 
+ .rodata        0x000000000110c050      0x210 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/gpsb_reg.o
+                0x000000000110c050                gpsbport
+                0x000000000110c248                gpsb_sm
+ .rodata        0x000000000110c260      0x79a ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2c.o
+ *fill*         0x000000000110c9fa        0x2 
+ .rodata        0x000000000110c9fc      0x46d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/i2s.o
+ *fill*         0x000000000110ce69        0x3 
+ .rodata        0x000000000110ce6c      0x739 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/ictc.o
+ *fill*         0x000000000110d5a5        0x3 
+ .rodata        0x000000000110d5a8      0x5da ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pdm.o
+ *fill*         0x000000000110db82        0x2 
+ .rodata        0x000000000110db84      0x472 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmio_dev.o
+ *fill*         0x000000000110dff6        0x2 
+ .rodata        0x000000000110dff8       0x28 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmio_dev_extn_pw_ctl.o
+ .rodata        0x000000000110e020      0x152 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/pmu.o
+ *fill*         0x000000000110e172        0x2 
+ .rodata        0x000000000110e174       0xb5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/rtc_dev.o
+ *fill*         0x000000000110e229        0x3 
+ .rodata        0x000000000110e22c     0x14d4 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/snor_mio.o
+ .rodata        0x000000000110f700      0x2a3 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/spu.o
+ *fill*         0x000000000110f9a3        0x1 
+ .rodata        0x000000000110f9a4      0x2f5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/ssm.o
+ *fill*         0x000000000110fc99        0x3 
+ .rodata        0x000000000110fc9c       0xde ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/timer.o
+ *fill*         0x000000000110fd7a        0x2 
+ .rodata        0x000000000110fd7c      0x33d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/uart.o
+ *fill*         0x00000000011100b9        0x3 
+ .rodata        0x00000000011100bc      0x18d ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wdt.o
+ *fill*         0x0000000001110249        0x3 
+ .rodata        0x000000000111024c      0x1ac ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/wdt_pmu.o
+ .rodata        0x00000000011103f8        0x5 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/tasks.o
+ *fill*         0x00000000011103fd        0x3 
+ .rodata        0x0000000001110400        0xd ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/timers.o
+ *fill*         0x000000000111040d        0x3 
+ .rodata        0x0000000001110410       0x20 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/port.o
+                0x0000000001110410                ulICCIAR
+                0x0000000001110414                ulICCEOIR
+                0x0000000001110418                ulICCPMR
+                0x000000000111041c                ulMaxAPIPriorityMask
+ .rodata        0x0000000001110430        0x4 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/heap_5.o
+ .rodata        0x0000000001110434       0x26 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_ARP.o
+ *fill*         0x000000000111045a        0x2 
+ .rodata        0x000000000111045c       0x14 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_DNS.o
+                0x000000000111045c                xLLMNR_MacAdress
+ .rodata        0x0000000001110470       0x28 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_IP.o
+                0x0000000001110470                xBroadcastMACAddress
+ .rodata        0x0000000001110498       0x25 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/FreeRTOS_Port.o
+                0x0000000001110498                xLogToStdout
+                0x000000000111049c                xLogToFile
+                0x00000000011104a0                xLogToUDP
+ *fill*         0x00000000011104bd        0x3 
+ .rodata        0x00000000011104c0        0x4 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/BufferAllocation_1.o
+                0x00000000011104c0                xBufferAllocFixedSize
+ .rodata        0x00000000011104c4       0x4c ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/NetworkInterface.o
+ .rodata        0x0000000001110510      0x259 ./../../../build/tcc70xx/gcc/tcc70xx-freertos-debug/obj/sal_freertos_impl.o
+ *fill*         0x0000000001110769        0x3 
+ .rodata        0x000000000111076c       0x20 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfprintf.o)
+ .rodata        0x000000000111078c       0x22 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfscanf.o)
+ *fill*         0x00000000011107ae        0x2 
+ .rodata        0x00000000011107b0        0x4 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-impure.o)
+                0x00000000011107b0                _global_impure_ptr
+ .rodata        0x00000000011107b4     0x34ce /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-jp2uc.o)
+ *fill*         0x0000000001113c82        0x2 
+ .rodata        0x0000000001113c84      0x188 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-locale.o)
+                0x0000000001113ca0                __C_locale
+ .rodata        0x0000000001113e0c       0x90 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-mbtowc_r.o)
+ *fill*         0x0000000001113e9c        0x4 
+ .rodata        0x0000000001113ea0      0x128 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-mprec.o)
+                0x0000000001113eb0                __mprec_tens
+                0x0000000001113f78                __mprec_tinytens
+                0x0000000001113fa0                __mprec_bigtens
+ .rodata        0x0000000001113fc8       0x50 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-strtod.o)
+ .rodata        0x0000000001114018      0x1f8 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfiprintf.o)
+                0x0000000001114018                __chclass
+                0x0000000001114118                __state_table
+                0x0000000001114184                __action_table
+ .rodata        0x0000000001114210       0x22 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfiscanf.o)
+ *fill*         0x0000000001114232        0x2 
+ .rodata        0x0000000001114234      0x101 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-ctype_.o)
+                0x0000000001114234                _ctype_
+ *fill*         0x0000000001114335        0x3 
+ .rodata        0x0000000001114338      0x100 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-gdtoa-gethex.o)
+                0x0000000001114338                __hexdig
  *(.rodata.*)
  .rodata.str1.4
-                0x0000000001114440       0x42 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfprintf.o)
- *fill*         0x0000000001114482        0x2 
+                0x0000000001114438       0x42 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfprintf.o)
+ *fill*         0x000000000111447a        0x2 
  .rodata.str1.4
-                0x0000000001114484        0x5 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfscanf.o)
- *fill*         0x0000000001114489        0x3 
+                0x000000000111447c        0x5 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfscanf.o)
+ *fill*         0x0000000001114481        0x3 
  .rodata.str1.4
-                0x000000000111448c       0x10 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-dtoa.o)
+                0x0000000001114484       0x10 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-dtoa.o)
                                          0x12 (size before relaxing)
  .rodata.str1.4
-                0x000000000111449c       0x12 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-jp2uc.o)
- *fill*         0x00000000011144ae        0x2 
+                0x0000000001114494       0x12 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-jp2uc.o)
+ *fill*         0x00000000011144a6        0x2 
  .rodata.str1.4
-                0x00000000011144b0      0x118 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-locale.o)
+                0x00000000011144a8      0x118 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-locale.o)
                                         0x130 (size before relaxing)
  .rodata.str1.4
-                0x00000000011145c8        0x1 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-mbrtowc.o)
+                0x00000000011145c0        0x1 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-mbrtowc.o)
  .rodata.str1.4
-                0x00000000011145c8        0xf /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-strtod.o)
+                0x00000000011145c0        0xf /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-strtod.o)
  .rodata.str1.4
-                0x00000000011145d7       0x2f /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfiprintf.o)
- *fill*         0x00000000011145d7        0x1 
+                0x00000000011145cf       0x2f /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-svfiprintf.o)
+ *fill*         0x00000000011145cf        0x1 
  .rodata.str1.4
-                0x00000000011145d8        0x4 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-syscalls.o)
+                0x00000000011145d0        0x4 /opt/gcc-linaro-7.2.1-2017.11-x86_64_arm-eabi/arm-eabi/libc/usr/lib/libc.a(lib_a-syscalls.o)
  *(.const)
  *(.const.*)
                 0x00000000011145e0                . = ALIGN (0x20)
- *fill*         0x00000000011145dc        0x4 
+ *fill*         0x00000000011145d4        0xc 
                 0x00000000011145e0                __RODATA_END__ = .
 
 .vector         0x0000000000000000       0x60 load address 0x00000000011145e0
