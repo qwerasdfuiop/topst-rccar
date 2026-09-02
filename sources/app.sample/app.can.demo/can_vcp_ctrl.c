@@ -50,7 +50,7 @@ static uint32 duty_pct_to_ns(uint32 pct, uint32 period_ns);
 static sint8 duty_from_speed(sint8 speed);
 
 static void ControlBrakeLight(boolean bTurnOn);
-static void ControlSignalLight(boolean bLeft, boolean bTurnOn);
+static void ControlSignalLight(boolean bTurnOn);
 static void ControlHeadLight(boolean bTurnOn);
 static void ControlFuelLevel(uint8 fuelLevel);
 
@@ -129,39 +129,28 @@ void RightSignalLED_OFF(void)
 	GPIO_Set(RightSignalLEDPIN, 0); 
 }
 
-void ControlSignalLight(boolean bLeft, boolean bTurnOn)
-{
-	static boolean binit = FALSE;
+// void ControlSignalLight(boolean bTurnOn)
+// {
+// 	static boolean binit = FALSE;
 
-	mcu_printf("[SIGNAL] Controlling Signal Light\r\n");
-	if(binit == FALSE) {
-		GPIO_Config(LeftSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
-		GPIO_Config(RightSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
-		LeftSignalLED_OFF();
-		RightSignalLED_OFF();
-		binit = TRUE;
-	}
-	
-	if (bLeft) {
-		if (bTurnOn) {
-			LeftSignalLED_ON();
-			mcu_printf("[LeftSignal] ON\r\n");
-		}
-		else {
-			LeftSignalLED_OFF();
-			mcu_printf("[LeftSignal] OFF\r\n");
-		}	
-	} else {
-		if (bTurnOn) {
-			RightSignalLED_ON();
-			mcu_printf("[RightSignal] ON\r\n");
-		}
-		else {
-			RightSignalLED_OFF();
-			mcu_printf("[RightSignal] OFF\r\n");
-		}		
-	}
-}
+// 	mcu_printf("[SIGNAL] Controlling Signal Light\r\n");
+// 	if(binit == FALSE) {
+// 		GPIO_Config(LeftSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
+// 		LeftSignalLED_OFF();
+// 		binit = TRUE;
+// 	}
+//     if(binit==TRUE) {
+//         if (bTurnOn) {
+//             LeftSignalLED_ON();
+//             mcu_printf("[LeftSignal] ON\r\n");
+//         }
+//         else {
+//             LeftSignalLED_OFF();
+//             mcu_printf("[LeftSignal] OFF\r\n");
+//         }
+// 	}	
+
+// }
 
 /* ------------------------------- Head Light ------------------------------- */
 
@@ -429,155 +418,155 @@ void ConfigureServoPWM(uint32 channel, uint32 port, uint32 angle_deg)
     mcu_printf("CH%d angle: %3d° → duty: %d ns\n", channel, angle_deg, duty_ns);
 }
 
-void ControlBreadBoardSensors(uint32 mId, uint8 nDataLength, sint8* pucData)
-{
-	sint8 ucMsgData[2] = {0x00, 0x00};
+// void ControlBreadBoardSensors(uint32 mId, uint8 nDataLength, sint8* pucData)
+// {
+// 	sint8 ucMsgData[2] = {0x00, 0x00};
 
-	if(nDataLength == 0)
-	{
-		// Somethong wrong. does nothing
-		return;
-	}
+// 	if(nDataLength == 0)
+// 	{
+// 		// Somethong wrong. does nothing
+// 		return;
+// 	}
 	
-	switch(mId)
-	{
-		case VCP_IO_BREAK_LIGHT:
-			ucMsgData[0] = pucData[0];
-			if(ucMsgData[0] == VCP_IO_ACTION_ON)
-			{
-				// turn on the break light
-				ControlBrakeLight(TRUE);
-			}
-			else
-			{
-				// turn off the break light
-				ControlBrakeLight(FALSE);
-			}
+// 	switch(mId)
+// 	{
+// 		case VCP_IO_BREAK_LIGHT:
+// 			ucMsgData[0] = pucData[0];
+// 			if(ucMsgData[0] == VCP_IO_ACTION_ON)
+// 			{
+// 				// turn on the break light
+// 				ControlBrakeLight(TRUE);
+// 			}
+// 			else
+// 			{
+// 				// turn off the break light
+// 				ControlBrakeLight(FALSE);
+// 			}
 				
-			break;
+// 			break;
 
-		case VCP_IO_TURN_SIGNAL:
-			ucMsgData[0] = pucData[0];
-			ucMsgData[1] = pucData[1];
+// 		case VCP_IO_TURN_SIGNAL:
+// 			ucMsgData[0] = pucData[0];
+// 			ucMsgData[1] = pucData[1];
 
-			if (ucMsgData[0] == VCP_IO_SUB_LEFT)
-            {  
-                if(ucMsgData[1] == VCP_IO_ACTION_ON)
-                {
-                    // turn on the left signal
-                    ControlSignalLight(TRUE, TRUE);
-                }
-                else
-                {
-                    // turn off the left light
-                    ControlSignalLight(TRUE, FALSE);
-                }
-            }
+// 			if (ucMsgData[0] == VCP_IO_SUB_LEFT)
+//             {  
+//                 if(ucMsgData[1] == VCP_IO_ACTION_ON)
+//                 {
+//                     // turn on the left signal
+//                     ControlSignalLight(TRUE, TRUE);
+//                 }
+//                 else
+//                 {
+//                     // turn off the left light
+//                     ControlSignalLight(TRUE, FALSE);
+//                 }
+//             }
 
-            if (ucMsgData[0] == VCP_IO_SUB_RIGHT)
-            {              
-                if(ucMsgData[1] == VCP_IO_ACTION_ON)
-                {
-                    // turn on the right signal
-                    ControlSignalLight(FALSE, TRUE);
-                }
-                else
-                {
-                    // turn off the right light
-                    ControlSignalLight(FALSE, FALSE);
-                }
-            }
+//             if (ucMsgData[0] == VCP_IO_SUB_RIGHT)
+//             {              
+//                 if(ucMsgData[1] == VCP_IO_ACTION_ON)
+//                 {
+//                     // turn on the right signal
+//                     ControlSignalLight(FALSE, TRUE);
+//                 }
+//                 else
+//                 {
+//                     // turn off the right light
+//                     ControlSignalLight(FALSE, FALSE);
+//                 }
+//             }
            
-            break;
+//             break;
 
-		case VCP_IO_EMER_SIGNAL:
-			ucMsgData[0] = pucData[0];
-			if(ucMsgData[0] == VCP_IO_ACTION_ON)
-			{
-				// turn on the emergency signal lights
-				ControlSignalLight(TRUE, TRUE);
-				ControlSignalLight(FALSE, TRUE);
-			}
-			else
-			{
-				// turn off the emergency signal lights
-				ControlSignalLight(TRUE, FALSE);
-				ControlSignalLight(FALSE, FALSE);
-			}
+// 		case VCP_IO_EMER_SIGNAL:
+// 			ucMsgData[0] = pucData[0];
+// 			if(ucMsgData[0] == VCP_IO_ACTION_ON)
+// 			{
+// 				// turn on the emergency signal lights
+// 				ControlSignalLight(TRUE, TRUE);
+// 				ControlSignalLight(FALSE, TRUE);
+// 			}
+// 			else
+// 			{
+// 				// turn off the emergency signal lights
+// 				ControlSignalLight(TRUE, FALSE);
+// 				ControlSignalLight(FALSE, FALSE);
+// 			}
 
-			break;
+// 			break;
 
-		case VCP_IO_HEAD_LIGHT:
-			ucMsgData[0] = pucData[0];
-			if(ucMsgData[0] == VCP_IO_ACTION_ON)
-			{
-				// turn on the head light
-				ControlHeadLight(TRUE);
-			}
-			else
-			{
-				// turn off the head light
-				ControlHeadLight(FALSE);
-			}
+// 		case VCP_IO_HEAD_LIGHT:
+// 			ucMsgData[0] = pucData[0];
+// 			if(ucMsgData[0] == VCP_IO_ACTION_ON)
+// 			{
+// 				// turn on the head light
+// 				ControlHeadLight(TRUE);
+// 			}
+// 			else
+// 			{
+// 				// turn off the head light
+// 				ControlHeadLight(FALSE);
+// 			}
 
-			break;
+// 			break;
 
-		case VCP_IO_FUEL_LEVEL:
-			ucMsgData[0] = (pucData[0] > 100)?100:pucData[0];
-			// set the fuel level
-			ControlFuelLevel(ucMsgData[0]);
-			//~
-			break;
+// 		case VCP_IO_FUEL_LEVEL:
+// 			ucMsgData[0] = (pucData[0] > 100)?100:pucData[0];
+// 			// set the fuel level
+// 			ControlFuelLevel(ucMsgData[0]);
+// 			//~
+// 			break;
 
-		case VCP_IO_MOTOR_SPEED:
-		{
-			static sint8 duty = 0;
-			sint8 speed = pucData[0]; // 0~80
+// 		case VCP_IO_MOTOR_SPEED:
+// 		{
+// 			static sint8 duty = 0;
+// 			sint8 speed = pucData[0]; // 0~80
 
-			if(speed==0)
-			{
-				MotorA_Set(0, 1);
-				MotorB_Set(0, 1);
-			}
-			else if(speed > 0)
-			{
-                duty = duty_from_speed(speed);
-				MotorA_Set(duty, 1);
-				MotorB_Set(duty, 1);
-            }
-            else 
-            {
-                duty = duty_from_speed(speed);
-				MotorA_Set(duty, 0);
-				MotorB_Set(duty, 0);
-            }
+// 			if(speed==0)
+// 			{
+// 				MotorA_Set(0, 1);
+// 				MotorB_Set(0, 1);
+// 			}
+// 			else if(speed > 0)
+// 			{
+//                 duty = duty_from_speed(speed);
+// 				MotorA_Set(duty, 1);
+// 				MotorB_Set(duty, 1);
+//             }
+//             else 
+//             {
+//                 duty = duty_from_speed(speed);
+// 				MotorA_Set(duty, 0);
+// 				MotorB_Set(duty, 0);
+//             }
 
-			mcu_printf("[MOTOR] speed=%d => duty=%d%%\r\n", (sint8)speed, (sint8)duty);
+// 			mcu_printf("[MOTOR] speed=%d => duty=%d%%\r\n", (sint8)speed, (sint8)duty);
 			
-			break;
-		}
-		case VCP_IO_MOTOR_WHEEL: // Servo motor control
-		{
-			int8_t input = (int8_t)pucData[0];   // 0~256
-			if (input < 0) input = 0;
-			if (input > 127) input = 127;
+// 			break;
+// 		}
+// 		case VCP_IO_MOTOR_WHEEL: // Servo motor control
+// 		{
+// 			int8_t input = (int8_t)pucData[0];   // 0~256
+// 			if (input < 0) input = 0;
+// 			if (input > 127) input = 127;
 
-			// 중앙 기준으로 -45~+45도로 매핑
-			int angle = 90 + ((input - 65) * 45) / 65;
+// 			// 중앙 기준으로 -45~+45도로 매핑
+// 			int angle = 90 + ((input - 65) * 45) / 65;
 
-			ConfigureServoPWM(5, GPIO_PERICH_CH3, angle);
+// 			ConfigureServoPWM(5, GPIO_PERICH_CH3, angle);
 
-			mcu_printf("[SERVO] input=%d -> angle=%d deg\r\n", input, angle);
-			break;
-		}
+// 			mcu_printf("[SERVO] input=%d -> angle=%d deg\r\n", input, angle);
+// 			break;
+// 		}
 			
-		default:
-			// undefined message
-			mcu_printf("[%s][%d] undefined can id !!!\r\n", __FUNCTION__, __LINE__);
-			break;
-	}
+// 		default:
+// 			// undefined message
+// 			mcu_printf("[%s][%d] undefined can id !!!\r\n", __FUNCTION__, __LINE__);
+// 			break;
+// 	}
 
-}
+// }
 #endif
 
 

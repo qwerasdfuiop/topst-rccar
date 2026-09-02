@@ -400,8 +400,13 @@ void VCP_CreateApp(void)
                          &uiWheelStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
 
     // [Emergency]
-    (void)SAL_TaskCreate(&uiEmerID, (const uint8 *)"VCP Emer", (SALTaskFunc)&EmergencySignalTask,
+    (void)SAL_TaskCreate(&uiEmerID, (const uint8 *)"VCP EmerSignal", (SALTaskFunc)&EmergencySignalTask,
                          &uiEmerStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
+
+    TaskHandle_t h = xTaskGetHandle("VCP Emer");
+    if (h != NULL) {
+        vTaskSuspend(h);   /* 평소에는 깜빡이지 않음 */
+    }
 
     // [Turn Signal]
     //(void)SAL_TaskCreate(&uiTurnID, (const uint8 *)"VCP Turn", (SALTaskFunc)&TurnSignalTask,

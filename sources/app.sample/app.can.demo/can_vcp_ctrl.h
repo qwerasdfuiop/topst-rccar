@@ -73,6 +73,8 @@ enum VCP_IO_SUBTYPE {
 void ControlBreadBoardSensors(uint32 mId, uint8 nDataLength, sint8* pucData);
 boolean InitSensorControls(void);
 
+//void ControlSignalLight(boolean bTurnOn);
+
 
 #endif  // ( MCU_BSP_CAN_VCP_CTRL_HEADER == 1 )
 

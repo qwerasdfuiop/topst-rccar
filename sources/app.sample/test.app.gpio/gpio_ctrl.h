@@ -12,7 +12,7 @@ void RightSignalLED_OFF(void);
 void HeadLightLED_ON(void);
 void HeadLightLED_OFF(void);
 void ControlBrakeLight(boolean bTurnOn);
-void ControlSignalLight(boolean bLeft, boolean bTurnOn);
+void ControlSignalLight(boolean bTurnOn);
 void ControlHeadLight(boolean bTurnOn);
 void BrakeLightTask(void *pvParameters);
 void TurnSignalTask(void *pvParameters);

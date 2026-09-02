@@ -19,6 +19,8 @@ void ConfigureServoPWM(uint32 channel, uint32 port, uint32 angle_deg);
 void MotorSpeedTask(void *pvParameters);
 void MotorWheelTask(void *pvParameters);
 
+void MotorEmergencyStop(void);
+
 #endif
 
 #endif

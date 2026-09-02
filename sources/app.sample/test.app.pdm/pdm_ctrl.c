@@ -334,3 +334,14 @@ void MotorWheelTask(void *pvParameters)
         }
     }
 }
+
+void MotorEmergencyStop(void)
+{
+    TaskHandle_t hSpeed;
+    MotorA_Set(0, 1);   /* IN1, IN2 LOW */
+    MotorB_Set(0, 1);   /* IN3, IN4 LOW */
+    hSpeed = xTaskGetHandle("VCP Speed");
+    if (hSpeed != NULL) {
+        vTaskSuspend(hSpeed);
+    }
+}

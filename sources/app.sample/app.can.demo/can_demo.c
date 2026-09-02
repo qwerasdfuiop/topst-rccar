@@ -405,6 +405,17 @@ static void CAN_DemoReceive
                     case VCP_IO_FUEL_LEVEL:  targetQueue = xQ_Fuel;       break;
                     case VCP_IO_TURN_SIGNAL: targetQueue = xQ_Turn;       break;
                     case VCP_IO_HEAD_LIGHT:  targetQueue = xQ_Head;       break;
+                    case VCP_IO_EMER_BRAKE:
+                    if (sRxMsg.mData[0] == VCP_IO_ACTION_ON) {
+                        mcu_printf("[CAN] EMER_BRAKE: suspend speed/wheel\n");
+                        MotorEmergencyStop();
+                        TaskHandle_t hLight = xTaskGetHandle("VCP EmerSignal");
+                        if (hLight != NULL) {
+                            vTaskResume(hLight);
+                        }
+
+                    }
+                    break;
                     default:
                         mcu_printf("[CAN] Unknown ID: 0x%X\n", sRxMsg.mId);
                         break;

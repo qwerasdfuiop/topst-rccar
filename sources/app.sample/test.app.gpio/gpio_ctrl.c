@@ -85,34 +85,56 @@ void ControlBrakeLight(boolean bTurnOn)
     }
 }
 
-void ControlSignalLight(boolean bLeft, boolean bTurnOn)
+// void ControlSignalLight(boolean bLeft, boolean bTurnOn)
+// {
+// 	static boolean binit = FALSE;
+
+// 	mcu_printf("[SIGNAL] Controlling Signal Light\r\n");
+// 	if(binit == FALSE) {
+// 		GPIO_Config(LeftSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
+// 		GPIO_Config(RightSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
+// 		LeftSignalLED_OFF();
+// 		RightSignalLED_OFF();
+// 		binit = TRUE;
+// 	}
+
+// 	if (bLeft) {
+// 		if (bTurnOn) {
+// 			LeftSignalLED_ON();
+// 		}
+// 		else {
+// 			LeftSignalLED_OFF();
+// 		}
+// 	} else {
+// 		if (bTurnOn) {
+// 			RightSignalLED_ON();
+// 		}
+// 		else {
+// 			RightSignalLED_OFF();
+// 		}
+// 	}
+// }
+
+void ControlSignalLight(boolean bTurnOn)
 {
 	static boolean binit = FALSE;
 
 	mcu_printf("[SIGNAL] Controlling Signal Light\r\n");
 	if(binit == FALSE) {
 		GPIO_Config(LeftSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
-		GPIO_Config(RightSignalLEDPIN,  GPIO_FUNC(0) | GPIO_OUTPUT | GPIO_NOPULL | GPIO_DS(3) | GPIO_INPUTBUF_DIS);
 		LeftSignalLED_OFF();
-		RightSignalLED_OFF();
 		binit = TRUE;
 	}
-
-	if (bLeft) {
-		if (bTurnOn) {
-			LeftSignalLED_ON();
-		}
-		else {
-			LeftSignalLED_OFF();
-		}
-	} else {
-		if (bTurnOn) {
-			RightSignalLED_ON();
-		}
-		else {
-			RightSignalLED_OFF();
-		}
-	}
+    if(binit==TRUE) {
+        if (bTurnOn) {
+            LeftSignalLED_ON();
+            mcu_printf("[LeftSignal] ON\r\n");
+        }
+        else {
+            LeftSignalLED_OFF();
+            mcu_printf("[LeftSignal] OFF\r\n");
+        }
+	}	
 }
 
 void ControlHeadLight(boolean bTurnOn)
@@ -159,125 +181,98 @@ void BrakeLightTask(void *pvParameters)
     }
 }
 
-void TurnSignalTask(void *pvParameters) 
-{
-    uint8 recvBuf[2];
+// void TurnSignalTask(void *pvParameters) 
+// {
+//     uint8 recvBuf[2];
     
-    boolean isLeftActive = FALSE;
-    boolean isRightActive = FALSE;
+//     boolean isLeftActive = FALSE;
+//     boolean isRightActive = FALSE;
     
-    boolean bLeftToggle = FALSE;
-    boolean bRightToggle = FALSE;
+//     boolean bLeftToggle = FALSE;
+//     boolean bRightToggle = FALSE;
 
-    TickType_t xLastLeftTime = 0;
-    TickType_t xLastRightTime = 0;
+//     TickType_t xLastLeftTime = 0;
+//     TickType_t xLastRightTime = 0;
     
-    TickType_t xCurrentTime;
-    const TickType_t xFrequency = pdMS_TO_TICKS(500);
+//     TickType_t xCurrentTime;
+//     const TickType_t xFrequency = pdMS_TO_TICKS(500);
 
-    (void)pvParameters;
+//     (void)pvParameters;
 
-    for (;;) 
-    {
-        if (xQueueReceive(xQ_Turn, recvBuf, 0) == pdPASS) 
-        {
-            if (recvBuf[0] == VCP_IO_SUB_LEFT) 
-            {
-                if (recvBuf[1] == VCP_IO_ACTION_ON) {
-                    isLeftActive = TRUE;
-                    bLeftToggle = TRUE; 
-                    ControlSignalLight(TRUE, TRUE);
-                    xLastLeftTime = xTaskGetTickCount();
-                } else {
-                    isLeftActive = FALSE;
-                    ControlSignalLight(TRUE, FALSE);
-                }
-            }
-            else if (recvBuf[0] == VCP_IO_SUB_RIGHT) 
-            {
-                if (recvBuf[1] == VCP_IO_ACTION_ON) {
-                    isRightActive = TRUE;
-                    bRightToggle = TRUE;
-                    ControlSignalLight(FALSE, TRUE);
-                    xLastRightTime = xTaskGetTickCount();
-                } else {
-                    isRightActive = FALSE;
-                    ControlSignalLight(FALSE, FALSE);
-                }
-            }
-        }
+//     for (;;) 
+//     {
+//         if (xQueueReceive(xQ_Turn, recvBuf, 0) == pdPASS) 
+//         {
+//             if (recvBuf[0] == VCP_IO_SUB_LEFT) 
+//             {
+//                 if (recvBuf[1] == VCP_IO_ACTION_ON) {
+//                     isLeftActive = TRUE;
+//                     bLeftToggle = TRUE; 
+//                     ControlSignalLight(TRUE, TRUE);
+//                     xLastLeftTime = xTaskGetTickCount();
+//                 } else {
+//                     isLeftActive = FALSE;
+//                     ControlSignalLight(TRUE, FALSE);
+//                 }
+//             }
+//             else if (recvBuf[0] == VCP_IO_SUB_RIGHT) 
+//             {
+//                 if (recvBuf[1] == VCP_IO_ACTION_ON) {
+//                     isRightActive = TRUE;
+//                     bRightToggle = TRUE;
+//                     ControlSignalLight(FALSE, TRUE);
+//                     xLastRightTime = xTaskGetTickCount();
+//                 } else {
+//                     isRightActive = FALSE;
+//                     ControlSignalLight(FALSE, FALSE);
+//                 }
+//             }
+//         }
 
-        xCurrentTime = xTaskGetTickCount();
+//         xCurrentTime = xTaskGetTickCount();
 
-        if (isLeftActive == TRUE)
-        {
-            if ((xCurrentTime - xLastLeftTime) >= xFrequency)
-            {
-                bLeftToggle = !bLeftToggle;
-                ControlSignalLight(TRUE, bLeftToggle);
-                xLastLeftTime = xCurrentTime;
-            }
-        }
+//         if (isLeftActive == TRUE)
+//         {
+//             if ((xCurrentTime - xLastLeftTime) >= xFrequency)
+//             {
+//                 bLeftToggle = !bLeftToggle;
+//                 ControlSignalLight(TRUE, bLeftToggle);
+//                 xLastLeftTime = xCurrentTime;
+//             }
+//         }
 
-        if (isRightActive == TRUE)
-        {
-            if ((xCurrentTime - xLastRightTime) >= xFrequency)
-            {
-                bRightToggle = !bRightToggle;
-                ControlSignalLight(FALSE, bRightToggle);
-                xLastRightTime = xCurrentTime;
-            }
-        }
+//         if (isRightActive == TRUE)
+//         {
+//             if ((xCurrentTime - xLastRightTime) >= xFrequency)
+//             {
+//                 bRightToggle = !bRightToggle;
+//                 ControlSignalLight(FALSE, bRightToggle);
+//                 xLastRightTime = xCurrentTime;
+//             }
+//         }
 
-        vTaskDelay(pdMS_TO_TICKS(10));
-    }
-}
+//         vTaskDelay(pdMS_TO_TICKS(10));
+//     }
+// }
 
 void EmergencySignalTask(void *pvParameters) 
 {
-    uint8 recvBuf[2];
-    boolean isEmergencyActive = FALSE;
-    boolean bLedState = FALSE;
-    TickType_t xTimeout;
+    // uint8 recvBuf[2];
+    // boolean isEmergencyActive = FALSE;
+    // boolean bLedState = FALSE;
+    // TickType_t xTimeout;
 
     (void)pvParameters;
 
     for (;;) 
     {
-        if (isEmergencyActive == TRUE) {
-            xTimeout = pdMS_TO_TICKS(500);
-        } else {
-            xTimeout = portMAX_DELAY;
-        }
-
-        if (xQueueReceive(xQ_EmerSignal, recvBuf, xTimeout) == pdPASS) 
-        {
-            if (recvBuf[0] == VCP_IO_ACTION_ON) 
-            {
-                isEmergencyActive = TRUE;
-                bLedState = TRUE;
-                ControlSignalLight(TRUE, TRUE);
-                ControlSignalLight(FALSE, TRUE);
-            }
-            else if (recvBuf[0] == VCP_IO_ACTION_OFF) 
-            {
-                isEmergencyActive = FALSE;
-                bLedState = FALSE;
-                ControlSignalLight(TRUE, FALSE);
-                ControlSignalLight(FALSE, FALSE);
-            }
-        }
-        else 
-        {
-            if (isEmergencyActive == TRUE) 
-            {
-                bLedState = !bLedState;
-                ControlSignalLight(TRUE, bLedState);
-                ControlSignalLight(FALSE, bLedState);
-            }
-        }
+        ControlSignalLight(TRUE);
+        vTaskDelay(pdMS_TO_TICKS(100));
+        ControlSignalLight(FALSE);
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
+
 
 void HeadLightTask(void *pvParameters) 
 {
