@@ -72,7 +72,7 @@ static uint32                           gALiveCount;
 QueueHandle_t xQ_Brake;
 QueueHandle_t xQ_MotorSpeed;
 QueueHandle_t xQ_MotorWheel;
-QueueHandle_t xQ_Emer;
+QueueHandle_t xQ_EmerSignal;
 QueueHandle_t xQ_Fuel;
 QueueHandle_t xQ_Turn;
 QueueHandle_t xQ_Head;
@@ -350,10 +350,10 @@ void VCP_CreateApp(void)
 	xQ_Brake      = xQueueCreate(5,  sizeof(uint8) * 2);
     xQ_MotorSpeed = xQueueCreate(20, sizeof(uint8) * 2);
     xQ_MotorWheel = xQueueCreate(10, sizeof(uint8) * 2);
-    xQ_Emer       = xQueueCreate(5,  sizeof(uint8) * 2);
-    xQ_Fuel       = xQueueCreate(5,  sizeof(uint8) * 2);
-    xQ_Turn       = xQueueCreate(5,  sizeof(uint8) * 2);
-    xQ_Head       = xQueueCreate(5,  sizeof(uint8) * 2);
+    xQ_EmerSignal       = xQueueCreate(5,  sizeof(uint8) * 2);
+    //xQ_Fuel       = xQueueCreate(5,  sizeof(uint8) * 2);
+    //xQ_Turn       = xQueueCreate(5,  sizeof(uint8) * 2);
+    //xQ_Head       = xQueueCreate(5,  sizeof(uint8) * 2);
 
     /* 2. Task ID 및 Stack 메모리 정적 선언 */
     // (1) Brake Task
@@ -373,16 +373,16 @@ void VCP_CreateApp(void)
     static uint32 uiEmerStk[VCP_CTRL_STK_SIZE];
 
     // (5) Turn Signal Task
-    static uint32 uiTurnID;
-    static uint32 uiTurnStk[VCP_CTRL_STK_SIZE];
+    //static uint32 uiTurnID;
+    //static uint32 uiTurnStk[VCP_CTRL_STK_SIZE];
 
     // (6) Head Light Task
-    static uint32 uiHeadID;
-    static uint32 uiHeadStk[VCP_CTRL_STK_SIZE];
+    //static uint32 uiHeadID;
+    //static uint32 uiHeadStk[VCP_CTRL_STK_SIZE];
 
-    // (7) Fuel Level Task
-    static uint32 uiFuelID;
-    static uint32 uiFuelStk[VCP_LCD_STK_SIZE];
+    //// (7) Fuel Level Task
+    //static uint32 uiFuelID;
+    //static uint32 uiFuelStk[VCP_LCD_STK_SIZE];
 
 
     /* 3. SAL_TaskCreate를 이용한 Task 생성 */
@@ -404,16 +404,16 @@ void VCP_CreateApp(void)
                          &uiEmerStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
 
     // [Turn Signal]
-    (void)SAL_TaskCreate(&uiTurnID, (const uint8 *)"VCP Turn", (SALTaskFunc)&TurnSignalTask,
-                         &uiTurnStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
+    //(void)SAL_TaskCreate(&uiTurnID, (const uint8 *)"VCP Turn", (SALTaskFunc)&TurnSignalTask,
+    //                     &uiTurnStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
 
     // [Head Light]
-    (void)SAL_TaskCreate(&uiHeadID, (const uint8 *)"VCP Head", (SALTaskFunc)&HeadLightTask,
-                         &uiHeadStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
+    //(void)SAL_TaskCreate(&uiHeadID, (const uint8 *)"VCP Head", (SALTaskFunc)&HeadLightTask,
+    //                     &uiHeadStk[0], VCP_CTRL_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
 
     // [Fuel Level]
-    (void)SAL_TaskCreate(&uiFuelID, (const uint8 *)"VCP Fuel", (SALTaskFunc)&FuelLevelTask,
-                         &uiFuelStk[0], VCP_LCD_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
+    //(void)SAL_TaskCreate(&uiFuelID, (const uint8 *)"VCP Fuel", (SALTaskFunc)&FuelLevelTask,
+    //                     &uiFuelStk[0], VCP_LCD_STK_SIZE, SAL_PRIO_APP_CFG, NULL);
 }
 
 #endif  // ( MCU_BSP_SUPPORT_APP_BASE == 1 )

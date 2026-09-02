@@ -10,7 +10,7 @@
 
 extern QueueHandle_t xQ_Brake;
 extern QueueHandle_t xQ_Turn;
-extern QueueHandle_t xQ_Emer;
+extern QueueHandle_t xQ_EmerSignal;
 extern QueueHandle_t xQ_Head;
 
 #define VCP_DATA_READY_BIT (1 << 0)
@@ -250,7 +250,7 @@ void EmergencySignalTask(void *pvParameters)
             xTimeout = portMAX_DELAY;
         }
 
-        if (xQueueReceive(xQ_Emer, recvBuf, xTimeout) == pdPASS) 
+        if (xQueueReceive(xQ_EmerSignal, recvBuf, xTimeout) == pdPASS) 
         {
             if (recvBuf[0] == VCP_IO_ACTION_ON) 
             {

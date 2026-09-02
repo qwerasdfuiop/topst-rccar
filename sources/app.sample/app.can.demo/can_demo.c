@@ -46,7 +46,7 @@
 extern QueueHandle_t xQ_Brake;
 extern QueueHandle_t xQ_MotorSpeed;
 extern QueueHandle_t xQ_MotorWheel;
-extern QueueHandle_t xQ_Emer;
+extern QueueHandle_t xQ_EmerSignal;
 extern QueueHandle_t xQ_Fuel;
 extern QueueHandle_t xQ_Turn;
 extern QueueHandle_t xQ_Head;
@@ -401,7 +401,7 @@ static void CAN_DemoReceive
                     case VCP_IO_BRAKE_LIGHT: targetQueue = xQ_Brake;      break;
                     case VCP_IO_MOTOR_SPEED: targetQueue = xQ_MotorSpeed; break;
                     case VCP_IO_MOTOR_WHEEL: targetQueue = xQ_MotorWheel; break;
-                    case VCP_IO_EMER_SIGNAL: targetQueue = xQ_Emer;       break;
+                    case VCP_IO_EMER_SIGNAL: targetQueue = xQ_EmerSignal;       break;
                     case VCP_IO_FUEL_LEVEL:  targetQueue = xQ_Fuel;       break;
                     case VCP_IO_TURN_SIGNAL: targetQueue = xQ_Turn;       break;
                     case VCP_IO_HEAD_LIGHT:  targetQueue = xQ_Head;       break;
